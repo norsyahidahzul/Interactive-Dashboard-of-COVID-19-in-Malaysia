@@ -6,15 +6,15 @@ def COVID19_Simulator():
    
 ## sidebar
 # Using "with" notation
-with st.sidebar:
+ with st.sidebar:
     model = st.radio(
         "Choose a type of SEIRD model",
         ("Classical", "Modified")
     )
 
-if model == 'Classical':
+ if model == 'Classical':
     st.write('You have selected Classical SEIRD model.')
-else:
+ else:
     st.write('You have selected Modified SEIRD model.')
 
 st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈")
