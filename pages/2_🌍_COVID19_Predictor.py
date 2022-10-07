@@ -92,7 +92,7 @@ def COVID19_Predictor():
 
 
 st.set_page_config(page_title="COVID-19 Predictor", page_icon="🌍")
-st.markdown("# COVID-19 Predicto")
+st.markdown("# COVID-19 Predictor")
 st.sidebar.header("COVID-19 Predictor")
 st.write(
     """This demo shows how to use
