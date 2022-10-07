@@ -21,9 +21,8 @@ st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈")
 st.markdown("# COVID-19 Simulator")
 st.sidebar.header("COVID-19 Simulator")
 st.write(
-    """This demo illustrates a combination of plotting and animation with
-Streamlit. We're generating a bunch of random numbers in a loop for around
-5 seconds. Enjoy!"""
+    """This simulator shows the effects of considered factors upon its increment or decrement in values. You may try to chose 
+    the values of parameters and see the changes of the SEIRD simulation. Enjoy!"""
 )
 
 COVID19_Simulator()
