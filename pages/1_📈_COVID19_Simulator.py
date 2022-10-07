@@ -10,7 +10,6 @@ import plotly.graph_objects as go
 import plotly.io as pio
 from lmfit import minimize, Parameters, report_fit
 pio.renderers.default = "notebook"
-%matplotlib inline
 plt.style.use('ggplot')
 
 def COVID19_Simulator(): 
