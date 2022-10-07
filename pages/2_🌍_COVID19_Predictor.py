@@ -9,7 +9,7 @@ from utils import show_code
 from urllib.error import URLError
 
 
-def COVID-19_Predictor():
+def COVID19_Predictor():
     @st.experimental_memo
     def from_data_file(filename):
         url = (
