@@ -28,15 +28,12 @@ def plotting_demo():
     st.button("Re-run")
 
 
-st.set_page_config(page_title="Plotting Demo", page_icon="📈")
-st.markdown("# Plotting Demo")
-st.sidebar.header("Plotting Demo")
+st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈")
+st.markdown("# COVID-19 Simulator")
+st.sidebar.header("COVID-19 Simulator")
 st.write(
     """This demo illustrates a combination of plotting and animation with
 Streamlit. We're generating a bunch of random numbers in a loop for around
 5 seconds. Enjoy!"""
 )
 
-plotting_demo()
-
-show_code(plotting_demo)
