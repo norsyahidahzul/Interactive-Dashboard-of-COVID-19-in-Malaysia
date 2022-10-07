@@ -13,7 +13,7 @@ def COVID19_Simulator():
 
  if model == 'Classical':
     st.write('**You have selected Classical SEIRD model simulator.**')
-    def classicalmodel ():
+    def classicalmodel (ode_model,ode_solver):
       classicalmodel ()
  else:
     st.write('**You have selected Modified SEIRD model simulator.**')
