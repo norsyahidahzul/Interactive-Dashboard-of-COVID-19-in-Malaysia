@@ -101,3 +101,6 @@ to display geospatial data."""
 )
 
 
+COVID19_Predictor()
+
+
