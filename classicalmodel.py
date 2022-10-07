@@ -92,5 +92,5 @@ fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.a
 
 fig.write_image("images/Cseird_simulation_withoutHD_non-optimised_constantparams.png")
 fig.show()
-
+st.pyplot(fig)
 #suggestion: better to change days to date similar like plotting figures for historical data
