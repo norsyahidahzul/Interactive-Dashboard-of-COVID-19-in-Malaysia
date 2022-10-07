@@ -8,7 +8,7 @@ from utils import show_code
 from urllib.error import URLError
 
 
-def data_frame_demo():
+def Overview_of_Cases():
     @st.experimental_memo
     def get_UN_data():
         AWS_BUCKET_URL = "http://streamlit-demo-data.s3-us-west-2.amazonaws.com"
@@ -59,3 +59,4 @@ st.write(
 (Data courtesy of the [UN Data Explorer](http://data.un.org/Explorer.aspx).)"""
 )
 
+Overview_of_Cases()
