@@ -17,35 +17,25 @@ from streamlit.logger import get_logger
 
 LOGGER = get_logger(__name__)
 
-
 def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
-    )
+  st.set_page_config(
+    page_title="Main Page",
+    page_icon="🦠")
+	
+  st.write("# Welcome to Interactive Dashboard of COVID-19 in Malaysia! 👋")
 
-    st.write("# Welcome to Streamlit! 👋")
+  st.sidebar.success("select a page above.")
 
-    st.sidebar.success("Select a demo above.")
-
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+  st.markdown(
     """
-    )
-
+    This interactive dashboard of COVID-19 in Malaysia is made for research purpose of Master's degree. This dashboard
+    contains COVID-19 simulator, COVID-19 predictor and Overview of COVID-19 cases in Malaysia. This dashboard is mainly
+    builded for researcher, analyst and government agency to help making a proper decision upon the spike or subside of COVID-19 cases.
+	
+    👈 **Click the pages on the sidebar** to explore this interactive dashboard!
+    Thank you.
+    """
+     )
 
 if __name__ == "__main__":
     run()
