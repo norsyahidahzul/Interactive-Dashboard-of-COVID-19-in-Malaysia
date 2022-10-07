@@ -37,3 +37,5 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
 5 seconds. Enjoy!"""
 )
 
+COVID19_Simulator()
+
