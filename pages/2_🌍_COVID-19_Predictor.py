@@ -1,17 +1,3 @@
-# Copyright 2018-2022 Streamlit Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#    http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 import streamlit as st
 import inspect
 import textwrap
@@ -23,7 +9,7 @@ from utils import show_code
 from urllib.error import URLError
 
 
-def mapping_demo():
+def COVID-19_Predictor():
     @st.experimental_memo
     def from_data_file(filename):
         url = (
@@ -105,15 +91,13 @@ def mapping_demo():
         )
 
 
-st.set_page_config(page_title="Mapping Demo", page_icon="🌍")
-st.markdown("# Mapping Demo")
-st.sidebar.header("Mapping Demo")
+st.set_page_config(page_title="COVID-19 Predictor", page_icon="🌍")
+st.markdown("# COVID-19 Predicto")
+st.sidebar.header("COVID-19 Predictor")
 st.write(
     """This demo shows how to use
 [`st.pydeck_chart`](https://docs.streamlit.io/library/api-reference/charts/st.pydeck_chart)
 to display geospatial data."""
 )
 
-mapping_demo()
 
-show_code(mapping_demo)
