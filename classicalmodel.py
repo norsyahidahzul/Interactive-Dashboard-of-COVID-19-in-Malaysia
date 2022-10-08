@@ -24,14 +24,14 @@ def ode_model(z, t, beta, sigma, gamma, mu):
     dIdt = sigma*E - gamma*I - mu*I
     dRdt = gamma*I
     dDdt = mu*I
-    return [dSdt, dEdt, dIdt, dRdt, dDdt]
+    return [dSdt, dEdt, dIdt, dRdt, dDdt]= ode_model ()
 
 #define ODE Solver
 def ode_solver(t, initial_conditions, params):
     initS, initE, initI, initR, initD = initial_conditions
     beta, sigma, gamma, mu= params['beta'].value, params['sigma'].value, params['gamma'].value, params['mu'].value
     res = odeint(ode_model, [initS, initE, initI, initR, initD], t, args=(beta, sigma, gamma, mu)) 
-    return res                                   #args used to pass a variable number of arguments to a function
+    return res = ode_solver()                                  #args used to pass a variable number of arguments to a function
 
 
 
@@ -93,4 +93,4 @@ fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.a
 fig.write_image("images/Cseird_simulation_withoutHD_non-optimised_constantparams.png")
 fig.show()
 st.pyplot(fig)
-#suggestion: better to change days to date similar like plotting figures for historical data
+
