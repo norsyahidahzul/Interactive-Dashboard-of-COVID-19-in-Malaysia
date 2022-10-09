@@ -72,5 +72,5 @@ fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='R
 fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
 
-st.line_chart (fig)
+st.plotly (fig)
 
