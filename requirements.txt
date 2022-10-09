@@ -7,3 +7,4 @@ pydeck==0.7.1
 seaborn==0.12.0
 matplotlib==3.5.1
 streamlit == 1.13.0
+lmfit == 1.0.0
