@@ -89,5 +89,5 @@ fig.update_layout(title='Simulation of Classical SEIRD Model',
                      )
 fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.arange(0, days + 1,step))
 fig.show()
-st.pyplot_chart(fig)
+st.plotly_scatter(fig)
 
