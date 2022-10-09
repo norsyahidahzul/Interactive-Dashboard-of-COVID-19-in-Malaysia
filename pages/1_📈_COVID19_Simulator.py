@@ -14,20 +14,15 @@ def COVID19_Simulator():
  if model == 'Classical':
     st.write('**You have selected Classical SEIRD model simulator :smile:.**')
     st.subheader("**Classical SEIRD model simulator**")
-   
-    define mathexp ():
+  
+    if st.button('Click here for more info on its mathematical expressions'):
          st.write('The mathematical expression of classical SEIRD model in terms of ordinary differential equations (ODE) can be expressed as follows:')
          st.latex(r'''\frac{ds}{dt} = -\frac{\beta_IS\left(t\right)I\left(t\right)}{N}''')
          st.latex(r'''\frac{dE}{dt} = \frac{\beta_IS\left(t\right)I\left(t\right)}{N} ''')
          st.latex(r'''\frac{dI}{dt} = \sigma E\left(t\right) - \gamma I\left(t\right)- \muI\left(t\right)''')
          st.latex(r'''\frac{dR}{dt} =  \gamma I\left(t\right)''')
          st.latex(r'''\frac{dD}{dt} =  \delta R\left(t\right)''')
-         
-         mathexp()
-   
-    if st.button('Click here for more info on its mathematical expressions'):
-       st.markdown(mathexp)
-       
+             
    
  else:
     st.write('**You have selected Modified SEIRD model simulator :smile:.**')
