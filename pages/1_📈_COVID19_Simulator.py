@@ -12,9 +12,10 @@ def COVID19_Simulator():
     )
 
  if model == 'Classical':
-   st.slider("Infection rate" (st.latex(\beta)), min_value=0, max_value=100, value=3, step=0.1)
-    st.write('**You have selected Classical SEIRD model simulator :smile:.**')
-    st.subheader("**Classical SEIRD model simulator**")
+   with st.sidebar:
+     parameters = st.slider("Infection rate"), min_value=0, max_value=100, value=3, step=0.1)
+   st.write('**You have selected Classical SEIRD model simulator :smile:.**')
+   st.subheader("**Classical SEIRD model simulator**")
   
     if st.button('Click here for more info on its mathematical expressions'):
          st.write('The mathematical expression of classical SEIRD model in terms of ordinary differential equations (ODE) can be expressed as follows:')
