@@ -13,7 +13,7 @@ def COVID19_Simulator():
 
  if model == 'Classical':
     st.write('**You have selected Classical SEIRD model simulator :smile:.**')
-      
+    st.subheader("**Classical SEIRD model simulator :simulator:**")
     st.latex(r'''\frac{ds}{dt} = -\frac{\beta_I\left(t\right)S\left(t\right)I\left(t\right)}{N}''')
     st.latex(r'''\frac{dE}{dt} = \frac{\beta_I\left(t\right)S\left(t\right)I\left(t\right)}{N} ''')
     st.latex(r'''\frac{dI}{dt} = \sigma\left(t\right)E\left(t\right) - \gamma\left(t\right)I\left(t\right)- \mu\left(t\right)I\left(t\right)''')
