@@ -12,6 +12,7 @@ def COVID19_Simulator():
     )
 
  if model == 'Classical':
+   st.sidebar.slider("Infection rate", min_value=0, max_value=100, value=3, step=0.1)
 
    st.write('**You have selected Classical SEIRD model simulator :smile:.**')
    st.subheader("**Classical SEIRD model simulator**")
