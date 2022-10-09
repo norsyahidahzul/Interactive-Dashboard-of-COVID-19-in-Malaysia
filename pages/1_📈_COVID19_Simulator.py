@@ -22,8 +22,6 @@ def COVID19_Simulator():
          st.latex(r'''\frac{dI}{dt} = \sigma E\left(t\right) - \gamma I\left(t\right)- \mu I\left(t\right)''')
          st.latex(r'''\frac{dR}{dt} =  \gamma I\left(t\right)''')
          st.latex(r'''\frac{dD}{dt} =  \delta R\left(t\right)''')
-         
-     else:
              
    
  else:
@@ -40,7 +38,6 @@ def COVID19_Simulator():
          st.latex(r'''\frac{dR}{dt} =  \gamma\left(t\right)I\left(t\right)- \delta\left(t\right)R\left(t\right)''')
          st.latex(r'''\frac{dD}{dt} =  \delta\left(t\right)R\left(t\right)''')
    
-   else:
 
 st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈")
 st.markdown("# COVID-19 Simulator")
