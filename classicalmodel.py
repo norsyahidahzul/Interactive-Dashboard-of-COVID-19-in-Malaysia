@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.integrate import odeint
-from tabulate import tabulate
 import plotly.graph_objects as go
 import plotly.io as pio
 
