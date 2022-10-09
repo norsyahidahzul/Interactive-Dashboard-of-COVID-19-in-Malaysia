@@ -13,11 +13,24 @@ def COVID19_Simulator():
 
  if model == 'Classical':
     st.write('**You have selected Classical SEIRD model simulator.**')
-    st.latex(r'''\frac{ds}{dt} = -\frac{\beta_I\left(t\right)S\left(t\right)I\left(t\right)}{N} -\frac{\beta_E\left(t\right)S\left(t\right)E\left(t\right)}{N} 
-    + \delta\left(t\right)R\left(t\right)''')
+      
+    st.latex(r'''\frac{ds}{dt} = -\frac{\beta_I\left(t\right)S\left(t\right)I\left(t\right)}{N}''')
+    st.latex(r'''\frac{dE}{dt} = \frac{\beta_I\left(t\right)S\left(t\right)I\left(t\right)}{N} ''')
+    st.latex(r'''\frac{dI}{dt} = \sigma\left(t\right)E\left(t\right) - \gamma\left(t\right)I\left(t\right)- \miu\left(t\right)I\left(t\right)''')
+    st.latex(r'''\frac{dR}{dt} =  \gamma\left(t\right)I\left(t\right)''')
+    st.latex(r'''\frac{dD}{dt} =  \delta\left(t\right)R\left(t\right)''')
    
  else:
     st.write('**You have selected Modified SEIRD model simulator.**')
+      
+    st.latex(r'''\frac{ds}{dt} = -\frac{\beta_I\left(t\right)S\left(t\right)I\left(t\right)}{N} -\frac{\beta_E\left(t\right)S\left(t\right)E\left(t\right)}{N} 
+    + \delta\left(t\right)R\left(t\right)''')
+    st.latex(r'''\frac{dE}{dt} = \frac{\beta_I\left(t\right)S\left(t\right)I\left(t\right)}{N} +\frac{\beta_E\left(t\right)S\left(t\right)E\left(t\right)}{N} 
+    - \sigma\left(t\right)E\left(t\right)''')
+    st.latex(r'''\frac{dI}{dt} = \sigma\left(t\right)E\left(t\right) - \gamma\left(t\right)I\left(t\right)- \miu\left(t\right)I\left(t\right)''')
+    st.latex(r'''\frac{dR}{dt} =  \gamma\left(t\right)I\left(t\right)- \delta\left(t\right)R\left(t\right)''')
+    st.latex(r'''\frac{dD}{dt} =  \delta\left(t\right)R\left(t\right)''')
+   
 
 st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈")
 st.markdown("# COVID-19 Simulator")
