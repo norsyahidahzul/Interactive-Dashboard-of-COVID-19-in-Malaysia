@@ -89,8 +89,5 @@ fig.update_layout(title='Simulation of Classical SEIRD Model',
                      )
 fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.arange(0, days + 1,step))
 
-
-fig.write_image("images/Cseird_simulation_withoutHD_non-optimised_constantparams.png")
-fig.show()
 st.pyplot(fig)
 
