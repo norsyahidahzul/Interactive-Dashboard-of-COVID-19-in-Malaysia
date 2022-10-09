@@ -25,6 +25,7 @@ def ode_model(z, t, beta, sigma, gamma, mu):
     dRdt = gamma*I
     dDdt = mu*I
     return dSdt, dEdt, dIdt, dRdt, dDdt 
+ode_model ()
 
 #define ODE Solver
 def ode_solver(t, initial_conditions, params):
@@ -33,8 +34,9 @@ def ode_solver(t, initial_conditions, params):
     res = odeint(ode_model, [initS, initE, initI, initR, initD], t, args=(beta, sigma, gamma, mu)) 
     return res                                #args used to pass a variable number of arguments to a function
 
+ode_solver()
 
-
+def main():
 #initial condition and initial values of parameters
 #initN (Malaysian Population 2020- include non citizen)
 initN = 32657300
@@ -72,4 +74,4 @@ fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='R
 fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
 st.pyplotly (fig)
-
+main ()
