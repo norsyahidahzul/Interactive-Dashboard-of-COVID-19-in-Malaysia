@@ -39,39 +39,39 @@ ode_solver()
 def main():
 #initial condition and initial values of parameters
 #initN (Malaysian Population 2020- include non citizen)
-initN = 32657300
-initE = 3375  #ParticipantTablighwhoPositive/totalscreeningat27/2/20
-initI = 1
-initR = 22
-initD = 0
-initS = initN - (initE + initI + initR + initD)
-beta= 12.5#15.44 
-sigma = 0.19
-gamma = 0.279 
-mu = 0.1
+    initN = 32657300
+    initE = 3375  #ParticipantTablighwhoPositive/totalscreeningat27/2/20
+    initI = 1
+    initR = 22
+    initD = 0
+    initS = initN - (initE + initI + initR + initD)
+    beta= 12.5#15.44 
+    sigma = 0.19
+    gamma = 0.279 
+    mu = 0.1
 
-days = 101
+    days = 101
 
-params = Parameters()
-params.add('beta', value=beta, min=0, max=100)
-params.add('sigma', value=sigma, min=0, max=100)
-params.add('gamma', value=gamma, min=0, max=100)
-params.add('mu', value=mu, min=0, max=100)
+    params = Parameters()
+    params.add('beta', value=beta, min=0, max=100)
+    params.add('sigma', value=sigma, min=0, max=100)
+    params.add('gamma', value=gamma, min=0, max=100)
+    params.add('mu', value=mu, min=0, max=100)
 
-initial_conditions = [initS,initE, initI, initR, initD]
-params['beta'].value, params['sigma'].value,params['gamma'].value, params['mu'].value = [beta, sigma, gamma, mu]
-tspan = np.arange(0, days, 1) #timespan,np.arrange to arrange day 0 till days with increment of 1
-sol = ode_solver(tspan, initial_conditions, params)
-S, E, I, R, D = sol[:, 0], sol[:, 1], sol[:, 2], sol[:, 3], sol[:, 4]
+    initial_conditions = [initS,initE, initI, initR, initD]
+    params['beta'].value, params['sigma'].value,params['gamma'].value, params['mu'].value = [beta, sigma, gamma, mu]
+    tspan = np.arange(0, days, 1) #timespan,np.arrange to arrange day 0 till days with increment of 1
+    sol = ode_solver(tspan, initial_conditions, params)
+    S, E, I, R, D = sol[:, 0], sol[:, 1], sol[:, 2], sol[:, 3], sol[:, 4]
 
 
-fig = go.figure()
+    fig = go.figure()
 
-fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
-fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turquoise', name='Exposed'))
-fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines', line_color='purple', name='Infected'))
-fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='Recovered'))
-fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
+    fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
+    fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turquoise', name='Exposed'))
+    fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines', line_color='purple', name='Infected'))
+    fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='Recovered'))
+    fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
-st.pyplotly (fig)
+    st.pyplotly (fig)
 main ()
