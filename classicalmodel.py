@@ -25,7 +25,7 @@ def ode_model(z, t, beta, sigma, gamma, mu):
     dRdt = gamma*I
     dDdt = mu*I
     return dSdt, dEdt, dIdt, dRdt, dDdt 
-ode_model ()
+ode_model (z, t, beta, sigma, gamma, mu)
 
 #define ODE Solver
 def ode_solver(t, initial_conditions, params):
@@ -34,7 +34,7 @@ def ode_solver(t, initial_conditions, params):
     res = odeint(ode_model, [initS, initE, initI, initR, initD], t, args=(beta, sigma, gamma, mu)) 
     return res                                #args used to pass a variable number of arguments to a function
 
-ode_solver()
+ode_solver(t, initial_conditions, params)
 
 def main():
 #initial condition and initial values of parameters
