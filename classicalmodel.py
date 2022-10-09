@@ -63,7 +63,7 @@ sol = ode_solver(tspan, initial_conditions, params)
 S, E, I, R, D = sol[:, 0], sol[:, 1], sol[:, 2], sol[:, 3], sol[:, 4]
 
 
-fig = go.Figure()
+fig = go.figure()
 
 fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
 fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turquoise', name='Exposed'))
@@ -71,6 +71,5 @@ fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines', line_color='purple', name='
 fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='Recovered'))
 fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
-
-st.plotly (fig)
+st.pyplotly (fig)
 
