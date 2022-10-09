@@ -72,22 +72,5 @@ fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='R
 fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
 
-if days <= 30:
-    step = 1
-elif days <= 90:
-    step = 7 
-else:
-    step = 10
-
-
-# Edit the layout
-fig.update_layout(title='Simulation of Classical SEIRD Model',
-            xaxis_title='Days',
-            yaxis_title='Populations',
-            title_x=0.5, font_size= 22,
-            width=1000, height=600
-                     )
-fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.arange(0, days + 1,step))
-fig.show()
-st.plotly_scatter(fig)
+st.line_chart (fig)
 
