@@ -88,6 +88,6 @@ fig.update_layout(title='Simulation of Classical SEIRD Model',
             width=1000, height=600
                      )
 fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.arange(0, days + 1,step))
+fig.show()
 
-st.pyplot(fig)
 
