@@ -13,9 +13,8 @@ def COVID19_Simulator():
 
  if model == 'Classical':
     st.write('**You have selected Classical SEIRD model simulator.**')
-    def classicalmodel ():
-      st.pyplot(fig)
-      classicalmodel ()
+    st.latex(r'''ds/dt= '''')
+   
  else:
     st.write('**You have selected Modified SEIRD model simulator.**')
 
