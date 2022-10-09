@@ -24,7 +24,7 @@ def ode_model(z, t, beta, sigma, gamma, mu):
     dIdt = sigma*E - gamma*I - mu*I
     dRdt = gamma*I
     dDdt = mu*I
-    return [dSdt, dEdt, dIdt, dRdt, dDdt]= ode_model ()
+    return dSdt, dEdt, dIdt, dRdt, dDdt = ode_model ()
 
 #define ODE Solver
 def ode_solver(t, initial_conditions, params):
