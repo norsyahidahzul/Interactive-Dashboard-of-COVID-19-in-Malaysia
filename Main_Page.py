@@ -6,7 +6,7 @@ LOGGER = get_logger(__name__)
 def run():
   st.set_page_config(
     page_title="Main Page",
-    page_icon="🦠")
+    page_icon=":happy:")
 	
   st.write("# Welcome to Interactive Dashboard of COVID-19 in Malaysia! 👋")
 
