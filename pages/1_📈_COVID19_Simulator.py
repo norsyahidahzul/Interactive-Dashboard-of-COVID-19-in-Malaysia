@@ -15,7 +15,7 @@ def COVID19_Simulator():
    beta=st.sidebar.slider("Infection rate", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
    sigma=st.sidebar.slider("Incubation rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
    gamma=st.sidebar.slider("Recovery rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
-   mu=st.sidebar.slider("Death rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1
+   mu=st.sidebar.slider("Death rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
 
    st.write('**You have selected Classical SEIRD model simulator :smile:.**')
    st.subheader("**Classical SEIRD model simulator**")
