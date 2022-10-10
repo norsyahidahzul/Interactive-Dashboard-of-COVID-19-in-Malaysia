@@ -21,7 +21,7 @@ def ode_model(z, t, beta, sigma, gamma, mu):
     dIdt = sigma*E - gamma*I - mu*I
     dRdt = gamma*I
     dDdt = mu*I
-    return {dSdt, dEdt, dIdt, dRdt, dDdt}
+    return [dSdt, dEdt, dIdt, dRdt, dDdt]
 
 
 #define ODE Solver
@@ -34,7 +34,7 @@ def ode_solver(t, initial_conditions, params):
 
 def classicalmodel():
     #initial condition and initial values of parameters
-#initN (Malaysian Population 2020- include non citizen)
+    #initN (Malaysian Population 2020- include non citizen)
     initN = 32657300
     initE = 3375  #ParticipantTablighwhoPositive/totalscreeningat27/2/20
     initI = 1
