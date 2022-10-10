@@ -12,10 +12,10 @@ def COVID19_Simulator():
     )
 
  if model == 'Classical':
-   beta=st.sidebar.slider("Infection rate", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
-   sigma=st.sidebar.slider("Incubation rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
-   gamma=st.sidebar.slider("Recovery rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
-   mu=st.sidebar.slider("Death rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   beta=st.sidebar.slider("Infection rate (β)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
+   sigma=st.sidebar.slider("Incubation rate (σ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   gamma=st.sidebar.slider("Recovery rate (γ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   mu=st.sidebar.slider("Death rate (μ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
 
    st.write('**You have selected Classical SEIRD model simulator :smile:.**')
    st.subheader("**Classical SEIRD model simulator**")
@@ -30,11 +30,11 @@ def COVID19_Simulator():
              
    
  else:
-   beta_I=st.sidebar.slider("Infection rate (S~I)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
-   beta_E=st.sidebar.slider("Infection rate (S~E)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
-   sigma=st.sidebar.slider("Incubation rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
-   gamma=st.sidebar.slider("Recovery rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
-   mu=st.sidebar.slider("Death rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   beta_I=st.sidebar.slider("Infection rate (βI)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
+   beta_E=st.sidebar.slider("Infection rate (βE)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
+   sigma=st.sidebar.slider("Incubation rate (σ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   gamma=st.sidebar.slider("Recovery rate (γ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   mu=st.sidebar.slider("Death rate (μ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
    delta=st.sidebar.slider("Reinfection rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
    
    st.write('**You have selected Modified SEIRD model simulator :smile:.**')
