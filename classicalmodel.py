@@ -68,10 +68,11 @@ def classicalmodel():
     fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines', line_color='purple', name='Infected'))
     fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='Recovered'))
     fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
-    fig.show()
-    st.pyplot(fig)
     fig.write_image('fig.png', engine='kaleido')
     fig.show()
+    st.pyplot(fig)
+    
+  
     
 classicalmodel ()
 
