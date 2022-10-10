@@ -12,10 +12,6 @@ def COVID19_Simulator():
     )
 
  if model == 'Classical':
-   st.sidebar.description ='''
-   See how the value of epidemiological parameters affects COVID-19 cases. 
-   Move the slider to change the parameters to display
-   '''
    beta=st.sidebar.slider("Infection rate (β)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
    sigma=st.sidebar.slider("Incubation rate (σ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
    gamma=st.sidebar.slider("Recovery rate (γ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
@@ -60,8 +56,9 @@ st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈")
 st.markdown("# COVID-19 Simulator")
 st.sidebar.header("COVID-19 Simulator")
 st.write(
-    """This simulator shows the effects of considered factors upon its increment or decrement in values. You may try to chose 
-    the values of parameters and see the changes of the SEIRD simulation. Enjoy!"""
+    """This simulator shows the effects of considered factors upon its increment or decrement in values. You may try to choose 
+    the values of parameters by moving the slider at the sidebar. See the changes of the SEIRD simulation and 
+    how the value of epidemiological parameters affects COVID-19 cases. Enjoy!"""
 )
 
 COVID19_Simulator()
