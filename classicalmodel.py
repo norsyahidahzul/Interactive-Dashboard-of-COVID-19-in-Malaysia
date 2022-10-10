@@ -33,7 +33,7 @@ def ode_solver(t, initial_conditions, params):
 
 
 def classicalmodel():
-#initial condition and initial values of parameters
+    #initial condition and initial values of parameters
 #initN (Malaysian Population 2020- include non citizen)
     initN = 32657300
     initE = 3375  #ParticipantTablighwhoPositive/totalscreeningat27/2/20
@@ -70,4 +70,6 @@ def classicalmodel():
     fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
     st.pyplotly (fig)
- classicalmodel ()
+classicalmodel ()
+
+
