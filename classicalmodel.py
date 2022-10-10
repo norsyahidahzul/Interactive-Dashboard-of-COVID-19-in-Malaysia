@@ -69,7 +69,8 @@ def classicalmodel():
     fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='Recovered'))
     fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
-    fig.savefig('main/model.png')
+    fig.write_image(main/SEIRD model simulator.png")
+    fig.show()
     st.pyplot(fig)
 classicalmodel ()
 
