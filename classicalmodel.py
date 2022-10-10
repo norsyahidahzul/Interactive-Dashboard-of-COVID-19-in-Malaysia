@@ -14,9 +14,6 @@ import plotly.io as pio
 
 #define Model
 def ode_model(z, t, beta, sigma, gamma, mu):
-    """
-    Reference https://www.idmod.org/docs/hiv/model-seir.html
-    """
     S, E, I, R, D = z
     N = S + E + I + R + D
     dSdt = -beta*S*I/N
@@ -24,8 +21,8 @@ def ode_model(z, t, beta, sigma, gamma, mu):
     dIdt = sigma*E - gamma*I - mu*I
     dRdt = gamma*I
     dDdt = mu*I
-    return dSdt, dEdt, dIdt, dRdt, dDdt 
-ode_model (z, t, beta, sigma, gamma, mu)
+    return {dSdt, dEdt, dIdt, dRdt, dDdt}
+
 
 #define ODE Solver
 def ode_solver(t, initial_conditions, params):
@@ -34,9 +31,8 @@ def ode_solver(t, initial_conditions, params):
     res = odeint(ode_model, [initS, initE, initI, initR, initD], t, args=(beta, sigma, gamma, mu)) 
     return res                                #args used to pass a variable number of arguments to a function
 
-ode_solver(t, initial_conditions, params)
 
-def main():
+def classicalmodel():
 #initial condition and initial values of parameters
 #initN (Malaysian Population 2020- include non citizen)
     initN = 32657300
@@ -74,4 +70,4 @@ def main():
     fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
     st.pyplotly (fig)
-main ()
+ classicalmodel ()
