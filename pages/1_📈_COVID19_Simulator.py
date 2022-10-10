@@ -12,7 +12,7 @@ def COVID19_Simulator():
     )
 
  if model == 'Classical':
-   st.sidebar.write("Choose a value of parameters for this SEIRD model simulator")
+   
    beta=st.sidebar.slider("Infection rate (β)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
    sigma=st.sidebar.slider("Incubation rate (σ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
    gamma=st.sidebar.slider("Recovery rate (γ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
@@ -31,7 +31,7 @@ def COVID19_Simulator():
              
    
  else:
-   st.sidebar.write("Choose a value of parameters for this SEIRD model simulator")
+   
    beta_I=st.sidebar.slider("Infection rate (βI)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
    beta_E=st.sidebar.slider("Infection rate (βE)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
    sigma=st.sidebar.slider("Incubation rate (σ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
