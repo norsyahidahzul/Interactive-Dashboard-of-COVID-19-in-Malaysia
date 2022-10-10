@@ -14,6 +14,8 @@ def COVID19_Simulator():
  if model == 'Classical':
    beta=st.sidebar.slider("Infection rate", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
    sigma=st.sidebar.slider("Incubation rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   gamma=st.sidebar.slider("Recovery rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   mu=st.sidebar.slider("Death rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1
 
    st.write('**You have selected Classical SEIRD model simulator :smile:.**')
    st.subheader("**Classical SEIRD model simulator**")
@@ -28,10 +30,17 @@ def COVID19_Simulator():
              
    
  else:
-    st.write('**You have selected Modified SEIRD model simulator :smile:.**')
-    st.subheader("**Modified SEIRD model simulator**")
+   beta_I=st.sidebar.slider("Infection rate (S~I)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
+   beta_E=st.sidebar.slider("Infection rate (S~E)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
+   sigma=st.sidebar.slider("Incubation rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   gamma=st.sidebar.slider("Recovery rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   mu=st.sidebar.slider("Death rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
+   delta=st.sidebar.slider("Reinfection rate", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
    
-    if st.button('Click here for more info on its mathematical expressions'):
+   st.write('**You have selected Modified SEIRD model simulator :smile:.**')
+   st.subheader("**Modified SEIRD model simulator**")
+   
+   if st.button('Click here for more info on its mathematical expressions'):
          st.write('The mathematical expression of modified SEIRD model in terms of ordinary differential equations (ODE) can be expressed as follows:')
          st.latex(r'''\frac{ds}{dt} = -\frac{\beta_I\left(t\right)S\left(t\right)I\left(t\right)}{N} -\frac{\beta_E\left(t\right)S\left(t\right)E\left(t\right)}{N} 
          + \delta\left(t\right)R\left(t\right)''')
