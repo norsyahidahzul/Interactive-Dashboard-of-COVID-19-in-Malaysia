@@ -69,6 +69,7 @@ def classicalmodel():
     fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='Recovered'))
     fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
     
+    fig.savefig("model")
     st.pyplot(fig)
 classicalmodel ()
 
