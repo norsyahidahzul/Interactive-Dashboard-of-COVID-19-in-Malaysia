@@ -12,7 +12,11 @@ def COVID19_Simulator():
     )
 
  if model == 'Classical':
-   
+   description ='''
+   See how the value of epidemiological parameters affects COVID-19 cases. 
+   Move the slider to change the parameters to display
+   '''
+   sliderCaption='Select Infection rate (β) for the chart'
    beta=st.sidebar.slider("Infection rate (β)", min_value=0.0, max_value=100.0, value=3.0, step=0.1)
    sigma=st.sidebar.slider("Incubation rate (σ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
    gamma=st.sidebar.slider("Recovery rate (γ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
