@@ -19,6 +19,7 @@ def COVID19_Simulator():
 
    st.write('**You have selected Classical SEIRD model simulator :smile:.**')
    st.subheader("**Classical SEIRD model simulator**")
+   
   
    if st.button('Click here for more info on its mathematical expressions'):
          st.write('The mathematical expression of classical SEIRD model in terms of ordinary differential equations (ODE) can be expressed as follows:')
