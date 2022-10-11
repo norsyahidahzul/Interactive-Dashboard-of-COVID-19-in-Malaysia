@@ -245,7 +245,7 @@ def COVID19_Simulator():
     st.subheader ('**Good job!**')
     st.write("""Infection rate is in a moderate value and R0 lesser than 1. """)
 
-st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈")
+st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈", layout="wide")
 st.markdown("# COVID-19 Simulator")
 st.sidebar.header("COVID-19 Simulator")
 st.write(
