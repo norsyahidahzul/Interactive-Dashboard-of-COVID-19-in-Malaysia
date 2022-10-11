@@ -1,62 +1,25 @@
 import streamlit as st
-import inspect
-import textwrap
-import pandas as pd
-import altair as alt
-from utils import show_code
-
-from urllib.error import URLError
 
 
 def Overview_of_Cases():
-    @st.experimental_memo
-    def get_UN_data():
-        AWS_BUCKET_URL = "http://streamlit-demo-data.s3-us-west-2.amazonaws.com"
-        df = pd.read_csv(AWS_BUCKET_URL + "/agri.csv.gz")
-        return df.set_index("Region")
-
-    try:
-        df = get_UN_data()
-        countries = st.multiselect(
-            "Choose countries", list(df.index), ["China", "United States of America"]
-        )
-        if not countries:
-            st.error("Please select at least one country.")
-        else:
-            data = df.loc[countries]
-            data /= 1000000.0
-            st.write("### Gross Agricultural Production ($B)", data.sort_index())
-
-            data = data.T.reset_index()
-            data = pd.melt(data, id_vars=["index"]).rename(
-                columns={"index": "year", "value": "Gross Agricultural Product ($B)"}
-            )
-            chart = (
-                alt.Chart(data)
-                .mark_area(opacity=0.3)
-                .encode(
-                    x="year:T",
-                    y=alt.Y("Gross Agricultural Product ($B):Q", stack=None),
-                    color="Region:N",
-                )
-            )
-            st.altair_chart(chart, use_container_width=True)
-    except URLError as e:
-        st.error(
-            """
-            **This demo requires internet access.**
-            Connection error: %s
-        """
-            % e.reason
-        )
+    
 
 
-st.set_page_config(page_title="Overview of Cases", page_icon="📊")
-st.markdown("# Overview of Cases")
-st.sidebar.header("Overview of Cases")
-st.write(
+    st.set_page_config(page_title="Overview of Cases", page_icon="📊")
+    st.markdown("# Overview of Cases")
+    st.sidebar.header("Overview of Cases")
+    st.write(
     """This demo shows how to use `st.write` to visualize Pandas DataFrames.
-(Data courtesy of the [UN Data Explorer](http://data.un.org/Explorer.aspx).)"""
-)
+    (Data courtesy of the [UN Data Explorer](http://data.un.org/Explorer.aspx).)"""
+    )
 
-Overview_of_Cases()
+    st.write(
+    """This page gives you an overview of COVID-19 cases in Malaysia during first,second and early of third waves based on general cases or state cases. 
+    """
+    )
+
+    st.write(
+    """**This page is under development. Please come again later.**
+    """
+    )
+ Overview_of_Cases()
