@@ -6,6 +6,8 @@ from scipy.integrate import odeint
 from lmfit import Parameters
 import plotly.graph_objects as go
 
+
+
 def COVID19_Simulator(): 
    
 ## sidebar
@@ -17,10 +19,13 @@ def COVID19_Simulator():
     )
 
  if model == 'Classical':
-   
-   #multiselect for populations
-   options = st.sidebar.multiselect('Choose populations to display', ['Susceptible','Exposed','Infected','Recovered','Death'], 
-   ['Susceptible','Exposed','Infected','Recovered','Death'])
+   populations = ["All","Susceptible","Exposed","Infected","Recovered","Death"]
+   instructions = """
+    Choose any populations to display\n
+    Options: either all populations or every each of populations\n
+    """
+   #selectbox for populations
+   selected_populations = st.sidebar.selectbox("Choose populations to display", populations, help=instructions,)
    
    days=st.sidebar.slider("Choose a value of Time-window (days)", min_value=0.0, max_value=100.0, value=30.0, step=1.0)
    beta=st.sidebar.slider("Choose a value of Infection rate (β)", min_value=0.0, max_value=100.0, value=15.44, step=0.1)
@@ -76,20 +81,20 @@ def COVID19_Simulator():
    sol = ode_solver(tspan, initial_conditions, params)
    S, E, I, R, D = sol[:, 0], sol[:, 1], sol[:, 2], sol[:, 3], sol[:, 4]
 
-
+  
    fig = go.Figure()
-   #to able functionality of multiselect, put if statement
-   if options == 'Susceptible':
+   #to able functionality of selectbox, put if statement
+   if selected_populations == 'Susceptible':
     fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
-     
-   #if options == 'Exposed':
-   #  fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turquoise', name='Exposed'))
-   #if options == 'Infected':
-     #fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines', line_color='purple', name='Infected')
-   #if options == 'Recovered':
-    # fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='Recovered'))
-   #if options == 'Death':
-     #fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
+   elif selected_populations == 'Exposed':
+    fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turqoise', name='Exposed'))
+   elif selected_populations == 'Infected':
+    fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines',line_color='purple', name='Infected'))
+   elif selected_populations == 'Recovered':
+    fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines',line_color='orange', name='Recovered'))
+   elif selected_populations == 'Death':
+    fig.add_trace(go.Scatter(x=tspan, y=D, mode='lines',line_color='red', name='Death'))
+   
    
    else:
     fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
@@ -115,14 +120,14 @@ def COVID19_Simulator():
    st.write(fig) 
    #st.pyplot(fig)        
    
+   st.write('You have selected:',selected_populations)
    
-   st.write('You have selected:',options)
    st.write('___________________________________________________________________________________________________________') 
    if beta >= 3.58:
     st.subheader ('Warning!')
     st.write("""Infection rate is too high and R0 is higher than 1.""")
     st.write("""**Recommendations**.""")
-    st.write("""Government need to:""")
+    st.write("""Government needs to:""")
     st.write("""1. Implement movement control order""")
     st.write("""2. Create awareness on importance of population behaviour towards pandemic
     """)
@@ -131,10 +136,14 @@ def COVID19_Simulator():
     st.write("""Infection rate is in a moderate value and R0 lesser than 1. """)
    
  else:
-   #multiselect for populations
+   instructions = """
+    Choose any populations to display\n
+    Options: either all populations or every each of populations\n
+    """
    
-   options = st.sidebar.multiselect('Choose populations to display', ['Susceptible','Exposed','Infected','Recovered','Death'], 
-   ['Susceptible','Exposed','Infected','Recovered','Death'])
+   #selectbox for populations
+   
+   selected_populations = st.sidebar.selectbox('Choose populations to display', ['All','Susceptible','Exposed','Infected','Recovered','Death'], help=instructions)
    days=st.sidebar.slider("Choose a value of Time-window (days)", min_value=0.0, max_value=100.0, value=30.0, step=1.0)
    beta_I=st.sidebar.slider("Choose a value of Infection rate (βI)", min_value=0.0, max_value=100.0, value=15.44, step=0.1)
    beta_E=st.sidebar.slider("Choose a value of Infection rate (βE)", min_value=0.0, max_value=200.0, value=77.2, step=0.1)
@@ -193,18 +202,20 @@ def COVID19_Simulator():
 
 
    fig = go.Figure()
-   #to able functionality of multiselect, put if statement
-   if options == 'Susceptible':
+   #to able functionality of selectbox, put if statement
+   fig = go.Figure()
+   #to able functionality of selectbox, put if statement
+   if selected_populations == 'Susceptible':
     fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
-     
-   #if options == 'Exposed':
-   #  fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turquoise', name='Exposed'))
-   #if options == 'Infected':
-     #fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines', line_color='purple', name='Infected')
-   #if options == 'Recovered':
-    # fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines', line_color='orange',name='Recovered'))
-   #if options == 'Death':
-     #fig.add_trace(go.Scatter(x= tspan, y=D, mode='lines', line_color='red',name='Death'))
+   elif selected_populations == 'Exposed':
+    fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turqoise', name='Exposed'))
+   elif selected_populations == 'Infected':
+    fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines',line_color='purple', name='Infected'))
+   elif selected_populations == 'Recovered':
+    fig.add_trace(go.Scatter(x=tspan, y=R, mode='lines',line_color='orange', name='Recovered'))
+   elif selected_populations == 'Death':
+    fig.add_trace(go.Scatter(x=tspan, y=D, mode='lines',line_color='red', name='Death'))
+   
    
    else:
     fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
@@ -231,21 +242,21 @@ def COVID19_Simulator():
    #st.pyplot(fig)        
    
    
-   st.write('You have selected:',options)
+   st.write('You have selected:',selected_populations)
    st.write('___________________________________________________________________________________________________________') 
    if beta_I >= 3.58:
     st.subheader ('Warning!')
     st.write("""Infection rate is too high and R0 is higher than 1.""")
     st.write("""**Recommendations**.""")
-    st.write("""Government need to:""")
+    st.write("""Government needs to:""")
     st.write("""1. Implement movement control order""")
     st.write("""2. Create awareness on importance of population behaviour towards pandemic
     """)
    else:
     st.subheader ('**Good job!**')
-    st.write("""Infection rate is in a moderate value and R0 lesser than 1. """)
+    st.write("""Infection rate is in a moderate value and R0 is lesser than 1. """)
 
-st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈", layout="wide")
+st.set_page_config(page_title="COVID-19 Simulator", page_icon="📈",layout="wide")
 st.markdown("# COVID-19 Simulator")
 st.sidebar.header("COVID-19 Simulator")
 st.write(
