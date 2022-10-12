@@ -6,8 +6,8 @@ def Overview_of_Cases():
     selected_data = st.sidebar.selectbox('Choose data to display', ['General','Kuala Lumpur','Selangor','Perak','Negeri Sembilan','Johor','Sabah', 'Sarawak','Terengganu',
     'Pahang','Kelantan','Perlis', 'Kedah', 'Melaka','Pulau Pinang'])
     
-    
-    df = pd.read_excel (r'C:\Users\USER\OneDrive - International Islamic University Malaysia\Desktop\SyahidZul\Master2021\Data Collection\Data_Covid19_MalaysiaGeneral.xlsx') 
+    url= 'https://github.com/norsyahidahzul/Interactive-Dashboard-of-COVID-19-in-Malaysia/blob/f8ea7a4c347b003511537439c8c0f2ed6f1415b6/Data_Covid19_MalaysiaGeneral.xlsx'
+    df = pd.read_excel (url) 
     st.write(df)
     
     maps = pd.DataFrame(np.random.randn(800,2)
