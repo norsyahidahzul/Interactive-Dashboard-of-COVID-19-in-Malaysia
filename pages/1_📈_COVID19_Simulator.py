@@ -19,7 +19,7 @@ def COVID19_Simulator():
     )
 
  if model == 'Classical':
-   populations = ["All","Susceptible","Exposed","Infected","Recovered","Death"]
+   populations = ["All populations","Susceptible","Exposed","Infected","Recovered","Death"]
    instructions = """
     Choose any populations to display\n
     Options: either all populations or every each of populations\n
@@ -143,7 +143,7 @@ def COVID19_Simulator():
    
    #selectbox for populations
    
-   selected_populations = st.sidebar.selectbox('Choose populations to display', ['All','Susceptible','Exposed','Infected','Recovered','Death'], help=instructions)
+   selected_populations = st.sidebar.selectbox('Choose populations to display', ['All populations','Susceptible','Exposed','Infected','Recovered','Death'], help=instructions)
    days=st.sidebar.slider("Choose a value of Time-window (days)", min_value=0.0, max_value=100.0, value=30.0, step=1.0)
    beta_I=st.sidebar.slider("Choose a value of Infection rate (βI)", min_value=0.0, max_value=100.0, value=15.44, step=0.1)
    beta_E=st.sidebar.slider("Choose a value of Infection rate (βE)", min_value=0.0, max_value=200.0, value=77.2, step=0.1)
