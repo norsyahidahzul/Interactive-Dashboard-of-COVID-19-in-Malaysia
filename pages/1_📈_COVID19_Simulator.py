@@ -87,7 +87,7 @@ def COVID19_Simulator():
    if selected_populations == 'Susceptible':
     fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
    elif selected_populations == 'Exposed':
-    fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turqoise', name='Exposed'))
+    fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turquoise', name='Exposed'))
    elif selected_populations == 'Infected':
     fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines',line_color='purple', name='Infected'))
    elif selected_populations == 'Recovered':
@@ -208,7 +208,7 @@ def COVID19_Simulator():
    if selected_populations == 'Susceptible':
     fig.add_trace(go.Scatter(x=tspan, y=S, mode='lines',line_color='blue', name='Susceptible'))
    elif selected_populations == 'Exposed':
-    fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turqoise', name='Exposed'))
+    fig.add_trace(go.Scatter(x=tspan, y=E, mode='lines',line_color='turquoise', name='Exposed'))
    elif selected_populations == 'Infected':
     fig.add_trace(go.Scatter(x=tspan, y=I, mode='lines',line_color='purple', name='Infected'))
    elif selected_populations == 'Recovered':
