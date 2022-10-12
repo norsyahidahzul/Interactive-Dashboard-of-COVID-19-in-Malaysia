@@ -7,7 +7,7 @@ def Overview_of_Cases():
     'Pahang','Kelantan','Perlis', 'Kedah', 'Melaka','Pulau Pinang'])
     
     url= 'https://github.com/norsyahidahzul/Interactive-Dashboard-of-COVID-19-in-Malaysia/blob/f8ea7a4c347b003511537439c8c0f2ed6f1415b6/Data_Covid19_MalaysiaGeneral.xlsx'
-    df = pd.read_excel (url) 
+    df = pd.read_excel (rurl) 
     st.write(df)
     
     maps = pd.DataFrame(np.random.randn(800,2)
