@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import openpyxl
+import xlrd
 
 def Overview_of_Cases():
     selected_data = st.sidebar.selectbox('Choose data to display', ['General','Kuala Lumpur','Selangor','Perak','Negeri Sembilan','Johor','Sabah', 'Sarawak','Terengganu',
@@ -22,7 +22,7 @@ def Overview_of_Cases():
     
     #sheet_url = "https://docs.google.com/spreadsheets/d/1-v1HV1nzqkNgmjJJxB3JMS10jEyZM-5f/edit#gid=23292093"
     #url= sheet_url.replace('/edit#gid=', '/export?format=xlsx&gid=')
-    df=pd.read_excel(url,engine=openpyxl)
+    df=pd.read_excel(url,engine='xlrd')
     st.write(df)
     
     maps_general = pd.DataFrame(np.random.randn(800,2)/[2,3]+[4.2105, 101.9758], columns =['latitude','longitude'])
