@@ -144,8 +144,8 @@ def COVID19_Simulator():
    #selectbox for populations
    selected_populations = st.sidebar.selectbox('Choose populations to display', ['All populations','Susceptible','Exposed','Infected','Recovered','Death'], help=instructions)
    days=st.sidebar.slider("Choose a value of Time-window (days)", min_value=0.0, max_value=100.0, value=120.0, step=1.0)
-   beta=st.sidebar.slider("Choose a value of Infection rate (β)", min_value=0.0, max_value=100.0, value=1.09, step=0.1)
-   beta_E=st.sidebar.slider("Choose a value of Infection rate (βE)", min_value=0.0, max_value=200.0, value=77.2, step=0.1)
+   beta_I=st.sidebar.slider("Choose a value of Infection rate (βI)", min_value=0.0, max_value=100.0, value=1.09, step=0.1)
+   beta_E=st.sidebar.slider("Choose a value of Infection rate (βE)", min_value=0.0, max_value=200.0, value=1.09, step=0.1)
    sigma=st.sidebar.slider("Choose a value of Incubation rate (σ)", min_value=0.0, max_value=100.0, value=0.19, step=0.1)
    gamma=st.sidebar.slider("Choose a value of Recovery rate (γ)", min_value=0.0, max_value=100.0, value=0.28, step=0.1)
    mu=st.sidebar.slider("Choose a value of Death rate (μ)", min_value=0.0, max_value=100.0, value=0.02, step=0.01)
