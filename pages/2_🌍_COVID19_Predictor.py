@@ -40,7 +40,7 @@ def COVID19_Predictor():
  
  # Read in data from the Google Sheet.
  # Uses st.cache_data to only rerun when the query changes or after 10 min.
- #@st.cache_data(ttl=600)
+ @st.cache_data(ttl=600)
  def load_data(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
     return pd.read_csv(csv_url)
@@ -54,7 +54,7 @@ def COVID19_Predictor():
     #initial condition and initial values of parameters
     #initN (Malaysian Population 2020- include non citizen)   
     initN = 32657300
-    days = 264  
+    days = st.sidebar.slider("Choose days", min_value=0, max_value=394, value=264, step=1)
     tMCO=53
     
     initE = 0#3375  #ParticipantTablighwhoPositive/totalscreeningat27/2/20
@@ -195,7 +195,7 @@ def COVID19_Predictor():
             predicted_IRD = sol [:,2:5]
             observed_IRD = covid_history.loc[0:days, ['daily_active_cases','total_recovered_cases', 'total_death_cases', ]].values
             
-            st.markdown("##### Chosen time-windows: 25/1/2020-18/9/2020")                      
+            #st.markdown("##### Chosen time-windows: 25/1/2020-15/10/2020")                      
             text = "<i>Created by Norsyahidah Zulkarnain, Department of Computational & Theoretical Sciences, Kulliyyah of Science, IIUM</i>"         
             st.markdown(f"<span style='font-size:12px;'>{text}</span>", unsafe_allow_html=True)
         
@@ -223,7 +223,7 @@ def COVID19_Predictor():
             sigma= 0.49948386		#0.30001983#0.30001935#0.15#0.5##0.49999927#0.21982829#
             delta= 0#0.02         
             p= 1.00000000#1#1.42728098##5 #1.42580770
-           #r= st.sidebar.slider("Choose proportion of quarantine rule-abiding population", min_value=0.0, max_value=1.0, value=0.6, step=0.01)
+          
             
             #define piecewise defined funtion for Beta_I and Beta_E
             def beta_I(tspan):
@@ -318,7 +318,7 @@ def COVID19_Predictor():
         
          
             fig.update_layout(title='',
-                xaxis_title='Days',
+                xaxis_title='Days (year 2020)',
                 yaxis_title='The number of active cases (I)',
                 title_x=0.3, font_size= 22,
                 width=700, height=500, xaxis_range=[df1['date'][0],df1['date'][days+1]]
@@ -330,8 +330,7 @@ def COVID19_Predictor():
             title='',
             margin=dict(t=0)) # Set the top margin to 0
             st.write(fig) 
-            
-            st.markdown("##### Chosen time-windows: 25/1/2020-18/9/2020")
+            #st.markdown("##### Chosen time-windows: 25/1/2020-18/9/2020")
             text = "<i>Created by Norsyahidah Zulkarnain, Department of Computational & Theoretical Sciences, Kulliyyah of Science, IIUM</i>"         
             st.markdown(f"<span style='font-size:12px;'>{text}</span>", unsafe_allow_html=True)
     
@@ -346,7 +345,7 @@ def COVID19_Predictor():
     #initial condition and initial values of parameters
     #initN (Malaysian Population 2020- include non citizen)
     initN = 32657300
-    days = 264
+    days = st.sidebar.slider("Choose days", min_value=0, max_value=394, value=264, step=1)
     tMCO=20.0    
     initE = 100#3375  #ParticipantTablighwhoPositive/totalscreeningat27/2/20
     initI = 1
@@ -481,7 +480,7 @@ def COVID19_Predictor():
             margin=dict(t=0))# Set the top margin to 0
             st.write(fig) 
             
-            st.markdown("##### Chosen time-windows: 27/2/2020-21/10/2020")
+            #st.markdown("##### Chosen time-windows: 27/2/2020-21/10/2020")
             text = "<i>Created by Norsyahidah Zulkarnain, Department of Computational & Theoretical Sciences, Kulliyyah of Science, IIUM</i>"         
             st.markdown(f"<span style='font-size:12px;'>{text}</span>", unsafe_allow_html=True)
                              
@@ -618,7 +617,7 @@ def COVID19_Predictor():
             margin=dict(t=0)) # Set the top margin to 0
             st.write(fig) 
             
-            st.markdown("##### Chosen time-windows: 27/2/2020-21/10/2020")
+            #st.markdown("##### Chosen time-windows: 27/2/2020-21/10/2020")
             text = "<i>Created by Norsyahidah Zulkarnain, Department of Computational & Theoretical Sciences, Kulliyyah of Science, IIUM</i>"         
             st.markdown(f"<span style='font-size:12px;'>{text}</span>", unsafe_allow_html=True)
     
@@ -635,4 +634,3 @@ st.markdown("## GUI-SEIRD Predictive Model for COVID-19 📈")
 
 
 COVID19_Predictor()
-
