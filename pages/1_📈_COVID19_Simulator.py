@@ -281,8 +281,8 @@ def COVID19_Simulator():
    tMCO=st.sidebar.slider("Choose a value of MCO first day", min_value=1.0, max_value=100.0, value=20.0, step=0.1)
    tRMCO=st.sidebar.slider("Choose a value of MCO lifted-up day", min_value=1.0, max_value=200.0, value=140.0, step=0.1)
    
-   st.write('**You have selected Modified SEIRD model simulator with time-varying parameters :smile:.**')
-   st.subheader("**Modified SEIRD model with time-varying parameters simulator**")
+   st.write('**You have selected Classical SEIRD model simulator with time-varying parameters :smile:.**')
+   st.subheader("**Classical SEIRD model with time-varying parameters simulator**")
    
    if st.button('Click here for more info on its mathematical expressions'):
          st.write('The mathematical expression of modified SEIRD model in terms of ordinary differential equations (ODE) can be expressed as follows:')
@@ -388,7 +388,7 @@ def COVID19_Simulator():
    else:
      step = 10
      
-   fig.update_layout(title='Simulation of Modified SEIRD Model with Time-Varying Parameters',
+   fig.update_layout(title='Simulation of Classical SEIRD Model with Time-Varying Parameters',
             xaxis_title='Days',
             yaxis_title='Populations',
             title_x=0.5, font_size= 22,
