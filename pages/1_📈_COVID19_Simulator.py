@@ -282,7 +282,7 @@ def COVID19_Simulator():
    tRMCO=st.sidebar.slider("Choose a value of MCO lifted-up day", min_value=1.0, max_value=200.0, value=140.0, step=0.1)
    
    st.write('**You have selected Classical SEIRD model simulator with time-varying parameters :smile:.**')
-   st.subheader("**Classical SEIRD model with time-varying parameters simulator**")
+   st.subheader("**cSEIRD2: Classical SEIRD model with time-varying parameters simulator**")
    
    if st.button('Click here for more info on its mathematical expressions'):
          st.write('The mathematical expression of modified SEIRD model in terms of ordinary differential equations (ODE) can be expressed as follows:')
