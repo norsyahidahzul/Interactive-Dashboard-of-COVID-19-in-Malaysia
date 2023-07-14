@@ -110,12 +110,15 @@ def COVID19_Simulator():
    else:
      step = 10
      
-   fig.update_layout(title='Simulation of Classical SEIRD Model with Constant Parameters',
+   fig.update_layout(title='',
             xaxis_title='Days',
             yaxis_title='Populations',
             title_x=0.5, font_size= 22,
             width=1000, height=600
                      )
+   fig.update_layout(
+            title='',
+            margin=dict(t=0))
    fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.arange(0, days + 1,step))
    st.write(fig) 
    #st.pyplot(fig)        
@@ -152,7 +155,7 @@ def COVID19_Simulator():
    delta=st.sidebar.slider("Choose a value of Reinfection rate (δ)", min_value=0.0, max_value=100.0, value=0.2, step=0.1)
    
    st.write('**You have selected Modified SEIRD model simulator with constant parameters :smile:.**')
-   st.subheader("**Modified SEIRD model with constant parameters simulator**")
+   st.subheader("**mSEIRD1: Modified SEIRD model with constant parameters simulator**")
    
    if st.button('Click here for more info on its mathematical expressions'):
          st.write('The mathematical expression of modified SEIRD model with constant parameters can be expressed in terms of ordinary differential equations (ODE) as follows:')
@@ -230,12 +233,16 @@ def COVID19_Simulator():
    else:
      step = 10
      
-   fig.update_layout(title='Simulation of Modified SEIRD Model with Constant Parameters',
+   fig.update_layout(title='',
             xaxis_title='Days',
             yaxis_title='Populations',
             title_x=0.5, font_size= 22,
             width=1000, height=600
                      )
+                     
+   fig.update_layout(
+            title='',
+            margin=dict(t=0))
    fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.arange(0, days + 1,step))
    st.write(fig) 
    #st.pyplot(fig)        
@@ -288,13 +295,13 @@ def COVID19_Simulator():
          st.write('The mathematical expression of modified SEIRD model in terms of ordinary differential equations (ODE) can be expressed as follows:')
          st.latex(r'''\frac{ds}{dt} = -\frac{\beta\left(t\right)SI}{N}  
          ''')
-         st.latex(r'''\frac{dE}{dt} = \frac{\beta_I\left(t\right)SI}{N} 
+         st.latex(r'''\frac{dE}{dt} = \frac{\beta\left(t\right)SI}{N} 
           - \sigma E''')
          st.latex(r'''\frac{dI}{dt} = \sigma E - \gamma\left(t\right)I- \mu\left(t\right)I''')
          st.latex(r'''\frac{dR}{dt} =  \gamma\left(t\right)I''')
          st.latex(r'''\frac{dD}{dt} =  \mu\left(t\right)I''')    
          st.write('___________________________________________________________________________________________________________') 
-         st.write('Time-varying parameters βI(t), βE(t), γ(t) and μ(t) are formulated in piecewise-defined function as follows:')  
+         st.write('Time-varying parameters β(t), γ(t) and μ(t) are formulated in piecewise-defined function.')  
          #insert the formula
    st.write('___________________________________________________________________________________________________________')    
    
@@ -388,12 +395,15 @@ def COVID19_Simulator():
    else:
      step = 10
      
-   fig.update_layout(title='Simulation of Classical SEIRD Model with Time-Varying Parameters',
+   fig.update_layout(title='',
             xaxis_title='Days',
             yaxis_title='Populations',
             title_x=0.5, font_size= 22,
             width=1000, height=600
                      )
+   fig.update_layout(
+            title='',
+            margin=dict(t=0))
    fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.arange(0, days + 1,step))
    st.write(fig) 
    #st.pyplot(fig)        
@@ -440,7 +450,7 @@ def COVID19_Simulator():
    tRMCO=st.sidebar.slider("Choose a value of MCO lifted-up day", min_value=1.0, max_value=100.0, value=200.0, step=0.1)
    
    st.write('**You have selected Modified SEIRD model simulator with time-varying parameters :smile:.**')
-   st.subheader("**Modified SEIRD model with time-varying parameters simulator**")
+   st.subheader("**mSEIRD2: Modified SEIRD model with time-varying parameters simulator**")
    
    if st.button('Click here for more info on its mathematical expressions'):
          st.write('The mathematical expression of modified SEIRD model in terms of ordinary differential equations (ODE) can be expressed as follows:')
@@ -452,7 +462,7 @@ def COVID19_Simulator():
          st.latex(r'''\frac{dR}{dt} =  \gamma\left(t\right)I- \delta\left(t\right)R''')
          st.latex(r'''\frac{dD}{dt} =  \mu\left(t\right)I''')    
          st.write('___________________________________________________________________________________________________________') 
-         st.write('Time-varying parameters βI(t), βE(t), γ(t) and μ(t) are formulated in piecewise-defined function as follows:')  
+         st.write('Time-varying parameters βI(t), βE(t), γ(t) and μ(t) are formulated in piecewise-defined function.')  
          #insert the formula
    st.write('___________________________________________________________________________________________________________')    
    
@@ -554,12 +564,15 @@ def COVID19_Simulator():
    else:
      step = 10
      
-   fig.update_layout(title='Simulation of Modified SEIRD Model with Time-Varying Parameters',
+   fig.update_layout(title='',
             xaxis_title='Days',
             yaxis_title='Populations',
             title_x=0.5, font_size= 22,
             width=1000, height=600
                      )
+   fig.update_layout(
+            title='',
+            margin=dict(t=0))
    fig.update_xaxes(tickangle=0, tickformat = None ,tickmode='array', tickvals=np.arange(0, days + 1,step))
    st.write(fig) 
    #st.pyplot(fig)        
@@ -589,6 +602,3 @@ st.write(
 )
 
 COVID19_Simulator()
-    
-    
-   
