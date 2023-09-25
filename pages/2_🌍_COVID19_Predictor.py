@@ -10,6 +10,7 @@ def COVID19_Predictor():
  #with st.sidebar:
     
  instructions1 = """
+    By default (264 days time window)\n
     Dataset 1: 25/1/2020-18/9/2020\n
     Dataset 2: 27/2/2020-15/10/2020
     """    
@@ -54,7 +55,7 @@ def COVID19_Predictor():
     #initial condition and initial values of parameters
     #initN (Malaysian Population 2020- include non citizen)   
     initN = 32657300
-    days = st.sidebar.slider("Choose time-window (days)", min_value=0, max_value=395, value=264, step=1)
+    days = st.sidebar.slider("Choose time-window (days)", min_value=0, max_value=500, value=264, step=1)
     tMCO=53
     
     initE = 0#3375  #ParticipantTablighwhoPositive/totalscreeningat27/2/20
