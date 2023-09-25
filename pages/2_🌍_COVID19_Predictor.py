@@ -319,7 +319,7 @@ def COVID19_Predictor():
         
          
             fig.update_layout(title='',
-                xaxis_title='Days (year 2020)',
+                xaxis_title='Days',
                 yaxis_title='The number of active cases (I)',
                 title_x=0.3, font_size= 22,
                 width=700, height=500, xaxis_range=[df1['date'][0],df1['date'][days+1]]
@@ -468,7 +468,7 @@ def COVID19_Predictor():
         
          
             fig.update_layout(title='',
-                xaxis_title='Days (year 2020)',
+                xaxis_title='Days',
                 yaxis_title='The number of active cases (I)',
                 title_x=0.3, font_size= 22,
                 width=700, height=500, xaxis_range=[df2['date'][0],df2['date'][days+1]], yaxis_range=[0,4000]
@@ -605,7 +605,7 @@ def COVID19_Predictor():
         
          
             fig.update_layout(title='',
-                xaxis_title='Days (year 2020)',
+                xaxis_title='Days',
                 yaxis_title='The number of active cases (I)',
                 title_x=0.3, font_size= 22,
                 width=700, height=500
