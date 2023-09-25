@@ -171,7 +171,7 @@ def COVID19_Predictor():
        
             fig = go.Figure()
             #to able functionality of selectbox, put if statement
-            fig.add_trace(go.Scatter(x=df1['date'][0:tRMCO], y=I[0:tRMCO], mode='lines',line_color='purple', name='Phase I and II'))
+            fig.add_trace(go.Scatter(x=df1['date'][0:tRMCO], y=I[0:tRMCO], mode='lines',line_color='purple', name='Phase I & II'))
             fig.add_trace(go.Scatter(x=df1['date'][tRMCO:days+1], y=I[tRMCO:days+1], mode='lines',line_color='orange', name='Phase III'))
             fig.add_trace(go.Scatter(x=df1['date'], y=covid_history.iloc[0:days+1].daily_active_cases, mode='markers', marker_symbol='square',marker_color='purple',\
                                  name='Actual data', line = dict(dash='dash')))
@@ -312,7 +312,7 @@ def COVID19_Predictor():
        
             fig = go.Figure()
             #to able functionality of selectbox, put if statement
-            fig.add_trace(go.Scatter(x=df1['date'][0:tRMCO], y=I[0:tRMCO], mode='lines',line_color='purple', name='Phase I and II'))
+            fig.add_trace(go.Scatter(x=df1['date'][0:tRMCO], y=I[0:tRMCO], mode='lines',line_color='purple', name='Phase I & II'))
             fig.add_trace(go.Scatter(x=df1['date'][tRMCO:days+1], y=I[tRMCO:days+1], mode='lines',line_color='orange', name='Phase III'))
             fig.add_trace(go.Scatter(x=df1['date'], y=covid_history.iloc[0:days+1].daily_active_cases, mode='markers', marker_symbol='square',marker_color='purple',\
                                  name='Actual data', line = dict(dash='dash')))
@@ -461,7 +461,7 @@ def COVID19_Predictor():
        
             fig = go.Figure()
             #to able functionality of selectbox, put if statement
-            fig.add_trace(go.Scatter(x=df2['date'][0:tRMCO], y=I[0:tRMCO], mode='lines',line_color='purple', name='Phase I and II'))
+            fig.add_trace(go.Scatter(x=df2['date'][0:tRMCO], y=I[0:tRMCO], mode='lines',line_color='purple', name='Phase I & II'))
             fig.add_trace(go.Scatter(x=df2['date'][tRMCO:days+1], y=I[tRMCO:days+1], mode='lines',line_color='orange', name='Phase III'))
             fig.add_trace(go.Scatter(x=df2['date'], y=covid_history.iloc[0:days+1].daily_active_cases, mode='markers', marker_symbol='square',marker_color='purple',\
                                  name='Actual data', line = dict(dash='dash')))
@@ -598,7 +598,7 @@ def COVID19_Predictor():
        
             fig = go.Figure()
             #to able functionality of selectbox, put if statement
-            fig.add_trace(go.Scatter(x=df2['date'][0:tRMCO], y=I[0:tRMCO], mode='lines',line_color='purple', name='Phase I and II'))
+            fig.add_trace(go.Scatter(x=df2['date'][0:tRMCO], y=I[0:tRMCO], mode='lines',line_color='purple', name='Phase I & II'))
             fig.add_trace(go.Scatter(x=df2['date'][tRMCO:days+1], y=I[tRMCO:days+1], mode='lines',line_color='orange', name='Phase III'))
             fig.add_trace(go.Scatter(x=df2['date'], y=covid_history.iloc[0:days+1].daily_active_cases, mode='markers', marker_symbol='square',marker_color='purple',\
                                  name='Actual data', line = dict(dash='dash')))
