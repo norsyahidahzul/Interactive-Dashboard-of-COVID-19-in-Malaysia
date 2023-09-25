@@ -54,7 +54,7 @@ def COVID19_Predictor():
     #initial condition and initial values of parameters
     #initN (Malaysian Population 2020- include non citizen)   
     initN = 32657300
-    days = st.sidebar.slider("Choose time-window (days)", min_value=0, max_value=395, value=264, step=1)
+    days = st.sidebar.slider("Choose time-window (days)", min_value=0, max_value=500, value=264, step=1)
     tMCO=53
     
     initE = 0#3375  #ParticipantTablighwhoPositive/totalscreeningat27/2/20
